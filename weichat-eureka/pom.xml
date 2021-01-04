@@ -11,5 +11,14 @@
 
     <artifactId>weichat-eureka</artifactId>
 
+    <dependencies>
+
+        <!--eureka坐标依赖-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+
+    </dependencies>
 
 </project>

@@ -12,10 +12,12 @@
         <module>weichat-pojo</module>
         <module>weichat-pojo</module>
         <module>weichat-comment</module>
-        <module>weichat-utils</module>
+        <module>weichat-utilss</module>
         <module>weichat-config</module>
         <module>weichat-eureka</module>
         <module>weichat-jwt</module>
+        <module>weichat-zuul</module>
+        <module>weichat-utilss</module>
     </modules>
 
     <!--引入springboot的parent-->
@@ -37,12 +39,6 @@
                 <version>Finchley.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>
-
-            <!--web工程必须的依赖-->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-web</artifactId>
             </dependency>
 
             <dependency>
