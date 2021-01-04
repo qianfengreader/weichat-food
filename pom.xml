@@ -9,8 +9,7 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>weichat-pojo</module>
-        <module>weichat-pojo</module>
+
         <module>weichat-comment</module>
         <module>weichat-utilss</module>
         <module>weichat-config</module>
@@ -18,6 +17,8 @@
         <module>weichat-jwt</module>
         <module>weichat-zuul</module>
         <module>weichat-utilss</module>
+        <module>weichat-menu</module>
+        <module>weichat-pojoo</module>
     </modules>
 
     <!--引入springboot的parent-->
