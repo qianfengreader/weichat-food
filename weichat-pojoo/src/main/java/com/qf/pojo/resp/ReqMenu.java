@@ -8,7 +8,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import java.util.Date;
 
 @Data
-public class Menu {
+public class ReqMenu {
 
     private Integer id;
 
