@@ -7,8 +7,12 @@ import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MyZuulFilter extends ZuulFilter {
+
+    private static final List URL_LIST = new ArrayList<>();
 
     //拦截器何时进行拦截  // 请求执行前调用
     @Override
@@ -41,8 +45,15 @@ public class MyZuulFilter extends ZuulFilter {
         return false;
     }
 
+    // 拦截后执行的方法
     @Override
     public Object run() throws ZuulException {
         return null;
+    }
+
+    // 定义空参构造函数，开始的时候进行list赋值，创建放行请求的集合
+    public MyZuulFilter() {
+
+
     }
 }

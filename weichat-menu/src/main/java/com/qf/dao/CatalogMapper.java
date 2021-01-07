@@ -9,6 +9,6 @@ import java.util.List;
 @Mapper
 public interface CatalogMapper {
 
-    @Select("select * from catalog")
+    @Select("select typename from catalog")
     List<Catalog> findAll();
 }
