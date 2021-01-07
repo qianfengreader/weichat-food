@@ -19,6 +19,7 @@
         <module>weichat-utilss</module>
         <module>weichat-menu</module>
         <module>weichat-pojoo</module>
+        <module>weichat-user</module>
     </modules>
 
     <!--引入springboot的parent-->
