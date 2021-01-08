@@ -2,6 +2,8 @@ package com.qf.pojo;
 
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
 public class Comments {
 
@@ -19,5 +21,9 @@ public class Comments {
     private String openid;
 
     private String username;
+
+    private String avatarurl;
+
+    private Date createtime;
 
 }
