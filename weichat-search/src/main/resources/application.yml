@@ -1,0 +1,29 @@
+server:
+  port: 8890
+
+spring:
+  application:
+    name: weichat-search
+  datasource:
+    password: root
+    username: root
+    url: jdbc:mysql://localhost:3306/meituan?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+
+
+#将自己注册到eureka上
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+
+
+#连接es索引库的地址
+springcloud-es:
+  elasticsearch:
+    hostlist: ${eshostlist:127.0.0.1:9200} #多个结点中间用逗号分隔
+
+
+#索引库名称
+es.index: 2007-weichat
+

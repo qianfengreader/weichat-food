@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.CommentsMapper">
+
+    <select id="findAllComments" resultType="com.qf.pojo.Comments">
+        select * from comment
+    </select>
+
+    <select id="findAllCommentsByOpenid" resultType="com.qf.pojo.Comments">
+        select * from comment where openid = #{openid}
+    </select>
+
+    <select id="findCommentsByMid" resultType="com.qf.pojo.Comments">
+        select * from comment where id = #{id}
+    </select>
+
+    <delete id="deleteCommentsByMid">
+        delete from comment where id = #{id}
+    </delete>
+
+    <update id="updateCommentsByMid" parameterType="com.qf.pojo.Comments">
+        /*动态sql*/
+        UPDATE COMMENT
+        <trim prefix="set" suffix="where" suffixOverrides=",">
+            <if test="info !=null and info!='' ">
+                info=#{info},
+            </if>
+            <if test="score!=null and score!='' ">
+                score = #{score},
+            </if>
+        </trim>
+        id = #{id}
+    </update>
+
+    <insert id="insertCommentsByMid" parameterType="com.qf.pojo.Comments">
+        INSERT INTO COMMENT(utel,info,MID,score,openid) VALUES(#{utel},#{info},#{mid},#{score},#{openid})
+    </insert>
+
+    <select id="findUserByOpenid" resultType="com.qf.pojo.User">
+        select * from user where openid=#{openid}
+    </select>
+
+
+</mapper>

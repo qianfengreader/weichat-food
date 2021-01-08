@@ -19,6 +19,9 @@
         <module>weichat-utilss</module>
         <module>weichat-menu</module>
         <module>weichat-pojoo</module>
+        <module>weichat-order</module>
+        <module>weichat-comments</module>
+        <module>weichat-search</module>
     </modules>
 
     <!--引入springboot的parent-->
@@ -26,7 +29,6 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.0.3.RELEASE</version>
-        <relativePath/>
     </parent>
 
     <dependencyManagement>

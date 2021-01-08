@@ -3,15 +3,27 @@ server:
 spring:
   application:
     name: weichat-config
+
+  #使用本地配置得方式(需要在本地配置公共的资源文件)
+  profiles:
+    active: native
+
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/CrazygodT/weichat_config.git  #git仓库的地址
-          username: CrazygodT  # git仓库的账号
-          password: 5211314liuting  # git仓库的密码
-          search-paths: weichat_config
-          default-label: main
+
+        #使用本地连接需要加载本地资源
+        native:
+          #本地资源的路径
+          search-locations: classpath:properties/
+
+#        git:
+#          uri: https://github.com/CrazygodT/weichat_config.git  #git仓库的地址
+#          username: CrazygodT  # git仓库的账号
+#          password: 5211314liuting  # git仓库的密码
+#          search-paths: weichat_config
+#          default-label: main
+
 eureka:
   client:
     service-url:
