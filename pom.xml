@@ -24,6 +24,7 @@
         <module>weichat-search</module>
         <module>weichat-manager</module>
         <module>weichat-brand</module>
+        <module>weichat-shop</module>
     </modules>
 
     <!--引入springboot的parent-->
