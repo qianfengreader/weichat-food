@@ -58,7 +58,6 @@ public class UploadUtils {
                 return baseResp;
             } catch (QiniuException ex) {
                 Response r = ex.response;
-                System.err.println(r.toString());
                 try {
                     System.err.println(r.bodyString());
                 } catch (QiniuException ex2) {

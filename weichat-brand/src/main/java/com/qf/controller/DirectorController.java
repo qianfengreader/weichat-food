@@ -35,4 +35,8 @@ public class DirectorController {
         System.out.println(director);
         return directorService.updateDir(director);
     }
+    @RequestMapping(value = "/findSearch",method = RequestMethod.POST)
+    public BaseResp findSearch(@RequestBody Map map){
+        return directorService.findSearch(map);
+    }
 }

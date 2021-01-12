@@ -20,7 +20,22 @@ FROM
 WHERE
 	brand.bname=shop.pname and shop.mname=director.sname
     </select>
-
+	<select id="findSearch" resultType="com.qf.pojo.Shop">
+        SELECT
+	shop.mname as name,
+	shop.pname,
+	brand.region,
+	shop.address,
+	director.`name` AS mname,
+	director.tel,
+	shop.state
+FROM
+	brand,
+	shop,
+	director
+WHERE
+	brand.bname=shop.pname and shop.mname=director.sname and shop.mname like #{name}
+    </select>
 	<delete id="deleteByName">
 		delete  from shop where mname= #{name}
 	</delete>

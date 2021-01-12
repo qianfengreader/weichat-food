@@ -19,4 +19,6 @@ public interface ShopMapper {
     void updateShop(Shop shop);
 
     Shop findShop(@Param("id") Integer id);
+
+    List<Shop> findSearch(@Param("name") String name);
 }

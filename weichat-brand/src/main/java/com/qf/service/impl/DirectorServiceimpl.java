@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class DirectorServiceimpl  implements DirectorService {
@@ -55,6 +56,16 @@ public class DirectorServiceimpl  implements DirectorService {
         BaseResp baseResp = new BaseResp();
         directorMapper.updateDir(director);
         baseResp.setCode(200);
+        return baseResp;
+    }
+
+    @Override
+    public BaseResp findSearch(Map map) {
+        BaseResp baseResp = new BaseResp();
+        String name = map.get("name").toString();
+        List<Director> user = directorMapper.findSearch('%'+name+'%');
+        baseResp.setCode(200);
+        baseResp.setData(user);
         return baseResp;
     }
 }

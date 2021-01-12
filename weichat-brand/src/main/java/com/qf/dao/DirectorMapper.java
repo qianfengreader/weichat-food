@@ -14,4 +14,6 @@ public interface DirectorMapper {
     Director findByName(@Param("name") Object name);
 
     void updateDir(Director director);
+
+    List<Director> findSearch(@Param("name")String name);
 }

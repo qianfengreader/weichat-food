@@ -62,10 +62,10 @@ public class MyZuulFilter extends ZuulFilter {
         Map verify = jwtUtils.Verify(token);
 
         if (verify == null || verify.get("username") == null) {
-            return true;
+            return false;
         }
 
-        return true;
+        return false;
     }
 
     @Override

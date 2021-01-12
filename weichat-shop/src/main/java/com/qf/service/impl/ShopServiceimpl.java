@@ -2,6 +2,7 @@ package com.qf.service.impl;
 
 import com.qf.common.BaseResp;
 import com.qf.dao.ShopMapper;
+import com.qf.pojo.Director;
 import com.qf.pojo.Shop;
 import com.qf.service.ShopService;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -96,6 +97,16 @@ public class ShopServiceimpl implements ShopService {
         shopMapper.updateShop(shop);
 
         baseResp.setCode(200);
+        return baseResp;
+    }
+
+    @Override
+    public BaseResp findSearch(Map map) {
+        BaseResp baseResp = new BaseResp();
+        String name = map.get("name").toString();
+        List<Shop> search = shopMapper.findSearch('%' + name + '%');
+        baseResp.setCode(200);
+        baseResp.setData(search);
         return baseResp;
     }
 

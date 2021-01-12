@@ -39,4 +39,8 @@ public class ShopController {
         System.out.println(shop);
         return shopService.updateShop(shop);
     }
+    @RequestMapping(value = "/findSearch",method = RequestMethod.POST)
+    public BaseResp findSearch(@RequestBody Map map){
+        return shopService.findSearch(map);
+    }
 }

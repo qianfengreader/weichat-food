@@ -15,4 +15,6 @@ public interface ShopService {
     BaseResp findByName(Map map);
 
     BaseResp updateShop(Shop shop);
+
+    BaseResp findSearch(Map map);
 }
