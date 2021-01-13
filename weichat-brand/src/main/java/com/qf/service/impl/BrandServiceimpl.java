@@ -6,7 +6,7 @@ import com.qf.dao.BrandMapper;
 import com.qf.dao.BrandRepository;
 import com.qf.pojo.Brand;
 import com.qf.service.BrandService;
-import com.qf.utils.RedisUtils;
+import com.qf.utils.ReidsUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +19,7 @@ public class BrandServiceimpl implements BrandService {
     @Autowired
     BrandRepository brandRepository;
     @Autowired
-    RedisUtils redisUtils;
+    ReidsUtils redisUtils;
     @Autowired
     BrandMapper brandMapper;
     @Autowired

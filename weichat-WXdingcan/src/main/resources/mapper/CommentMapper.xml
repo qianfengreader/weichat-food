@@ -1,0 +1,19 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.CommentMapper">
+
+    <select id="findAll" resultType="comment">
+        SELECT avatarurl,info,us.username AS NAME
+FROM users AS us , comments AS com
+WHERE us.`openid`=com.`openid`
+    </select>
+
+    <select id="findAllByOpenid" resultType="comment">
+        SELECT avatarurl,info,us.username AS NAME
+FROM users AS us , comments AS com
+WHERE us.`openid`=com.`openid`
+AND com.`openid`= #{openid}
+    </select>
+
+</mapper>

@@ -25,6 +25,7 @@
         <module>weichat-manager</module>
         <module>weichat-brand</module>
         <module>weichat-shop</module>
+        <module>weichat-WXdingcan</module>
     </modules>
 
     <!--引入springboot的parent-->
@@ -32,6 +33,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.0.3.RELEASE</version>
+
     </parent>
 
     <dependencyManagement>
@@ -59,6 +61,12 @@
                 <artifactId>fastjson</artifactId>
                 <version>1.2.62</version>
             </dependency>
+
+            <!--&lt;!&ndash;springboot JPA起步的依赖&ndash;&gt;-->
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-starter-data-jpa</artifactId>-->
+            <!--</dependency>-->
 
         </dependencies>
 
