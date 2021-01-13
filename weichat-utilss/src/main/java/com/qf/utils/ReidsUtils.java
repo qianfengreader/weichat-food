@@ -1,9 +1,5 @@
 package com.qf.utils;
 
-/**
- * Created by 54110 on 2020/12/23.
- */
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ZSetOperations;
@@ -16,10 +12,12 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by 54110 on 2019-08-01.
+ * Created by 54110 on 2020/12/11.
  */
 @Component
 public class ReidsUtils {
+
+
     @Autowired
     private RedisTemplate redisTemplate;
 
