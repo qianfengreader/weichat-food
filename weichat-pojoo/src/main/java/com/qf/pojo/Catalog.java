@@ -7,7 +7,7 @@ public class Catalog {
 
     private Integer id;
 
-    private String typeName;
+    private String typename;
 
     private Integer type;
 }
