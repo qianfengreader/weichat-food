@@ -1,0 +1,23 @@
+server:
+  port: 8890
+
+spring:
+  application:
+    name: weichat-search
+
+  cloud:
+    config:
+      discovery:
+        #请求我们配置在eureka上config的 得唯一标识,获取config里配置文件的内容
+        service-id: weichat-config
+        enabled: true
+      name: weichat
+      profile: dev
+      #使用git远程调用要加分支
+      label: main
+
+#将自己注册到eureka上
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/

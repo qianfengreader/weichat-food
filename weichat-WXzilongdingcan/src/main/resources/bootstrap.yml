@@ -1,0 +1,57 @@
+server:
+  port: 8887
+spring:
+  application:
+    name: weichat-zilongdingcan
+  cloud:
+    config:
+      discovery:
+        # 配置在eureka上的唯一标识
+        service-id: weichat-config
+        enabled: true
+      name: weichat
+      profile: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka
+# 当使用zuul网关进行请求时，允许携带cookie
+
+
+
+
+#server:
+#  port: 8887
+##  #https加密端口号 443
+##  port: 443
+##  #SSL证书路径 一定要加上classpath:
+##  ssl:
+##    key-store: classpath:zilongdingcan666.jks
+##    #SSL证书密码（密码在第一步的keystorePass.txt中）
+##    key-store-password: 36H6evHj
+##    #证书类型
+##    key-store-type: JKS
+#spring:
+#  application:
+#    name: weichat-WXzilongdingcan
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/meituan?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+#    username: root
+#    password: root
+#  jpa:
+#    database: mysql
+#    show-sql: true
+#    generate-ddl: true
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8000/eureka
+#mybatis:
+#  mapper-locations: classpath:mapper/*Mapper.xml
+#  type-aliases-package: com.qf.pojo
+#qiniu:
+#  ak: DbjAKC_dXVPB2B5s7mZiPGO8Dk17bF0sJOrjcJR5
+#  sk: Om8AZofVZFYZaJo2TMTPMhsWHo0OWqmlNzKmMG37
+#  bucket: zilongdushu
+#  url: http://qlfan50gz.hn-bkt.clouddn.com/

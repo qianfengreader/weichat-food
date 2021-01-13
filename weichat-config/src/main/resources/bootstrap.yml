@@ -2,7 +2,7 @@ server:
   port: 8001
 spring:
   application:
-    name: weichat-config
+    name: weichat-config;
   cloud:
     config:
       server:

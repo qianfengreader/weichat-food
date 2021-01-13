@@ -1,0 +1,18 @@
+server:
+  port: 8007
+spring:
+  application:
+    name: weichat-brand
+  cloud:
+    config:
+      discovery:
+        # 配置在eureka上的唯一标识
+        service-id: weichat-config
+        enabled: true
+      name: weichat
+      profile: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka
+# 当使用zuul网关进行请求时，允许携带cookie

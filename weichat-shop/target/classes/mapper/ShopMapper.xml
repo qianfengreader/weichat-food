@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.ShopMapper">
+
+    <select id="findAll" resultType="com.qf.pojo.Shop">
+        SELECT
+	shop.mname as name,
+	shop.pname,
+	brand.region,
+	shop.address,
+	director.`name` AS mname,
+	director.tel,
+	shop.state
+FROM
+	brand,
+	shop,
+	director
+WHERE
+	brand.bname=shop.pname and shop.mname=director.sname
+    </select>
+	<select id="findSearch" resultType="com.qf.pojo.Shop">
+        SELECT
+	shop.mname as name,
+	shop.pname,
+	brand.region,
+	shop.address,
+	director.`name` AS mname,
+	director.tel,
+	shop.state
+FROM
+	brand,
+	shop,
+	director
+WHERE
+	brand.bname=shop.pname and shop.mname=director.sname and shop.mname like #{name}
+    </select>
+	<delete id="deleteByName">
+		delete  from shop where mname= #{name}
+	</delete>
+	<update id="updatestate">
+		update shop set state =#{state} where mname=#{name}
+	</update>
+	<update id="updateShop">
+		update shop set mname=#{mname},pname=#{pname},address=#{address},dname=#{dname},landline=#{landline} where id=#{id}
+	</update>
+	<select id="findByName" resultType="com.qf.pojo.Shop">
+		SELECT shop.id,shop.mname,shop.pname,shop.address,shop.dname,shop.landline FROM shop where mname=#{name}
+	</select>
+	<select id="findShop" resultType="com.qf.pojo.Shop">
+		select  * from shop where id=#{id}
+	</select>
+</mapper>

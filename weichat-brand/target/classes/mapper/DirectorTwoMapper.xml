@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qf.dao.DirectorMapper">
+
+    <select id="findAll" resultType="com.qf.pojo.Director">
+        select * from director
+    </select>
+    <select id="findSearch" resultType="com.qf.pojo.Director">
+        select * from director where name like #{name}
+    </select>
+    <select id="findByName" resultType="com.qf.pojo.Director">
+        select * from director where name=#{name}
+    </select>
+    <update id="updateDir">
+        update director set tel=#{tel},state=#{state} where id=#{id}
+    </update>
+</mapper>

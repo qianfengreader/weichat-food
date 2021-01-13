@@ -15,7 +15,7 @@ public class SearchController {
     @Autowired
     SearchService searchService;
 
-    @RequestMapping("/searchKey")
+    @RequestMapping("/searchComment")
     public BaseResp searchKey(@RequestParam("key")String key,@RequestParam("page")Integer page,@RequestParam("size")Integer size){
 
         return searchService.searchKey(key,page,size);
