@@ -26,6 +26,8 @@
         <module>weichat-brand</module>
         <module>weichat-shop</module>
         <module>weichat-WXzilongdingcan</module>
+        <module>weichat-user</module>
+        <module>weichat-send</module>
     </modules>
 
     <!--引入springboot的parent-->

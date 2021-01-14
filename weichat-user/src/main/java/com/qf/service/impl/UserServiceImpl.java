@@ -4,7 +4,7 @@ import com.qf.common.BaseResp;
 import com.qf.dao.UserMapper;
 import com.qf.pojo.User;
 import com.qf.service.UserService;
-import com.qf.utils.ReidsUtils;
+import com.qf.utils.RedisUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
@@ -21,7 +21,7 @@ import java.util.UUID;
 @Service
 public class UserServiceImpl implements UserService {
    @Autowired
-   ReidsUtils redisUtils;
+   RedisUtils redisUtils;
    @Autowired
    UserMapper userMapper;
     @Autowired
