@@ -22,7 +22,7 @@ public class Comments {
 
     private String openid;
 
-    private String username;
+    private String name;
 
     private String avatarurl;
 

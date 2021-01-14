@@ -23,4 +23,6 @@ public interface UserMapper {
     Integer updateById(User user);
 
     Integer deleteById(@Param("id") Integer id);
+
+    User findByUsernameAndPassword(@Param("username")String username,@Param("password") String password);
 }

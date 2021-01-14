@@ -5,13 +5,13 @@
 
     <select id="findAll" resultType="com.qf.pojo.Comment">
         SELECT avatarurl,info,us.username AS NAME
-FROM users AS us , comments AS com
+FROM user AS us , comment AS com
 WHERE us.`openid`=com.`openid`
     </select>
 
     <select id="findAllByOpenid" resultType="com.qf.pojo.Comment">
         SELECT avatarurl,info,us.username AS NAME
-FROM users AS us , comments AS com
+FROM user AS us , comment AS com
 WHERE us.`openid`=com.`openid`
 AND com.`openid`= #{openid}
     </select>

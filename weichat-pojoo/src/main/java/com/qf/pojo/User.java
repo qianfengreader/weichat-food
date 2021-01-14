@@ -23,6 +23,7 @@ public class User {
     @JsonFormat(pattern = "yyyy-MM-dd")
     @LastModifiedDate
     private Date    updatetime;
+    private String openid;  //买家微信openid
 
     private String  email;
 

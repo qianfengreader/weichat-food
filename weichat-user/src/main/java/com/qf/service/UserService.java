@@ -3,6 +3,7 @@ package com.qf.service;
 import com.qf.common.BaseResp;
 import com.qf.pojo.User;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 public interface UserService {
@@ -17,4 +18,6 @@ public interface UserService {
     BaseResp updateById(User user);
 
     BaseResp deleteById(Map map);
+
+    BaseResp findUserByToken(HttpServletRequest request);
 }

@@ -2,14 +2,16 @@ server:
   port: 8001
 spring:
   application:
-    name: weichat-config;
+    name: weichat-config
   cloud:
     config:
       server:
         git:
-          uri: https://github.com/gyh-cloud/weichat-food.git  #git仓库的地址
+          uri: https://github.com/luogongxuan2000/weichat-food.git  #git仓库的地址
           search-paths: weichat-food
           default-label: main
+          username: luogongxuan2000
+          password: luo7293339
 eureka:
   client:
     service-url:

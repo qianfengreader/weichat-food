@@ -20,7 +20,7 @@ import java.io.UnsupportedEncodingException;
  * Created by 54110 on 2020/12/4.
  */
 @Component
-public class UploadUtils {
+public class UploadUtilss {
 
     @Value("${qiniu.ak}")
     private String ak;

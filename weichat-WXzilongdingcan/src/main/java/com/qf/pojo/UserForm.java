@@ -9,7 +9,7 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 public class UserForm {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,6 +31,10 @@ public class UserForm {
     @LastModifiedDate//自动添加更新时间的注解
     @Column(name = "updatetime")
     private Date updateTime;
+
+    private String  email;
+
+    private  Integer status;
 
 
 }

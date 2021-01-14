@@ -18,7 +18,7 @@ public interface MenuMapper {
     @Select("select m.id,m.cname,m.price,m.inventory,m.info,m.pic,typename,m.create_time as createTime,m.update_time as updateTime from menu m where id = #{id}")
     Menu findById(Integer id);
 
-    @Update("update menu set cname = #{cname}, price = #{price}, inventory = #{inventory},info = #{info},pic = #{pic},typename = #{typename},create_time = #{createTime},update_time = #{updateTime} where id = #{id}")
+    @Update("update menu set cname = #{cname}, price = #{price}, inventory = #{inventory},info = #{info},pic = #{pic},typename = #{typename},menutype = #{menutype},create_time = #{createTime},update_time = #{updateTime} where id = #{id}")
     Integer updateMenu(Menu menu);
 
     @Delete("delete from menu where id = #{id}")

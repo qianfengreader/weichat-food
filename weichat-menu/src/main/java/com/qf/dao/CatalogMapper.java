@@ -11,4 +11,7 @@ public interface CatalogMapper {
 
     @Select("select typename from catalog")
     List<Catalog> findAll();
+
+    @Select("select type from catalog where typename = #{typeName}")
+    Integer findByTypeName(String typeName);
 }

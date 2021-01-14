@@ -14,12 +14,10 @@
         <module>weichat-utilss</module>
         <module>weichat-config</module>
         <module>weichat-eureka</module>
-        <module>weichat-jwt</module>
         <module>weichat-zuul</module>
         <module>weichat-utilss</module>
         <module>weichat-menu</module>
         <module>weichat-pojoo</module>
-        <module>weichat-order</module>
         <module>weichat-comments</module>
         <module>weichat-search</module>
         <module>weichat-manager</module>

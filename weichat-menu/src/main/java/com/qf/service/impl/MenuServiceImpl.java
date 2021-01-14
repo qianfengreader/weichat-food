@@ -3,6 +3,7 @@ package com.qf.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.qf.common.BaseResp;
+import com.qf.dao.CatalogMapper;
 import com.qf.dao.MenuMapper;
 import com.qf.pojo.Menu;
 import com.qf.pojo.ReqMenu;
@@ -19,6 +20,9 @@ public class MenuServiceImpl implements MenuService {
 
     @Autowired
     MenuMapper menuMapper;
+
+    @Autowired
+    CatalogMapper catalogMapper;
 
     @Override
     public BaseResp findAll(Integer page,Integer size) {
@@ -60,7 +64,10 @@ public class MenuServiceImpl implements MenuService {
     public BaseResp updateMenu(Menu menu) {
 
         BaseResp baseResp = new BaseResp();
-        Integer integer = menuMapper.updateMenu(menu);
+        Integer byTypeName = catalogMapper.findByTypeName(menu.getTypename());
+        menu.setMenutype(byTypeName);
+        menuMapper.updateMenu(menu);
+
         baseResp.setMessage("修改成功");
         baseResp.setCode(200);
         return baseResp;

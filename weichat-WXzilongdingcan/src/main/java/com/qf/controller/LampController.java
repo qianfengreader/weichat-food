@@ -1,6 +1,6 @@
 package com.qf.controller;
 
-import com.qf.common.UploadUtils;
+import com.qf.common.UploadUtilss;
 import com.qf.pojo.BaseResp;
 import com.qf.pojo.Lamp;
 import com.qf.service.LampService;
@@ -21,7 +21,7 @@ public class LampController {
     LampService lampService;
 
     @Autowired
-    UploadUtils uploadUtils;
+    UploadUtilss uploadUtils;
 
     @RequestMapping("/findAll")
     public BaseResp findAll(){
