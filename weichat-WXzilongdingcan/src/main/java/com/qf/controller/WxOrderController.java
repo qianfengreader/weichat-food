@@ -50,9 +50,13 @@ public class WxOrderController {
     private WxOrderUtils wxOrder;
 
     //创建订单
+    //服务器端 表单验证
+    //@Valid OrderReq orderReq  需要进行验证的类
+    //BindingResult  验证之后返回的对象
     @PostMapping("/create")
     @Transactional//数据库事务
     public ResultVO create(@Valid OrderReq orderReq, BindingResult bindingResult) {
+        //这里仅进行为空判断
         if (bindingResult.hasErrors()) {
             log.error("参数不正确, orderReq={}", orderReq);
             throw new DianCanException(ResultEnum.PARAM_ERROR.getCode(),
@@ -67,6 +71,7 @@ public class WxOrderController {
         orderBean.setBuyerOpenid(orderReq.getOpenid());
         List<WxOrderDetail> orderDetailList = new ArrayList<>();
         try {
+            //从前端获取的购物车信息
             orderDetailList = new Gson().fromJson(orderReq.getItems(),
                     new TypeToken<List<WxOrderDetail>>() {
                     }.getType());

@@ -57,35 +57,39 @@ public class WxOrderUtils {
 
         //计算订单总价
         for (WxOrderDetail orderDetail : orderBean.getOrderDetailList()) {
+            //如果id不存在   则返回null 防止程序报错(标准写法)
             Menu foodInfo = wxMeNuRepository.findById(orderDetail.getFoodId()).orElse(null);
+            //异常捕获500后跟错误原因  返回给前端
             if (foodInfo == null) {
-                throw new DianCanException(ResultEnum.PRODUCT_NOT_EXIST);
+                throw new DianCanException(ResultEnum.PRODUCT_NOT_EXIST);//无此菜品
             }
             orderAmount = foodInfo.getPrice()
                     .multiply(new BigDecimal(orderDetail.getFoodQuantity()))
                     .add(orderAmount);//计算订单总价
         }
-        //写入总订单数据库
+        //写入总订单数据库  操作实体类
         WxOrderRoot orderMaster = new WxOrderRoot();
-        BeanUtils.copyProperties(orderBean, orderMaster);
-        orderMaster.setOrderAmount(orderAmount);
-        orderMaster.setOrderStatus(OrderStatusEnum.NEW_PAYED.getCode());
+        //list  复制
+        //import org.springframework.beans.BeanUtils;   (a,b)   a转化为b
+        //import org.apache.commons.beanutils.BeanUtils     (a,b)   b转化为a
+        BeanUtils.copyProperties(orderBean, orderMaster);//把orderBean转换为orderMaster
+        orderMaster.setOrderAmount(orderAmount);    //订单总价
+        orderMaster.setOrderStatus(OrderStatusEnum.NEW_PAYED.getCode());//已支付的标识 1
+        //save  与   saveflush
+        //save，只暂时保留在内存中，直到发出flush或commit命令
         WxOrderRoot orderRoot = orderRootRepository.save(orderMaster);
-
         for (WxOrderDetail orderDetail : orderBean.getOrderDetailList()) {
             Menu foodInfo = wxMeNuRepository.findById(orderDetail.getFoodId()).orElse(null);
             //订单详情入库
             orderDetail.setOrderId(orderRoot.getOrderId());
-
             //BeanUtils.copyProperties(foodInfo, orderDetail);
             orderDetail.setFoodIcon(foodInfo.getPic());
             orderDetail.setFoodName(foodInfo.getCname());
             orderDetail.setFoodPrice(foodInfo.getPrice());
-
             orderDetailRepository.save(orderDetail);
         }
 
-        //扣库存
+        //扣menu库存
         List<WxCardResponse> cartDTOList = orderBean.getOrderDetailList().stream().map(e ->
                 new WxCardResponse(e.getFoodId(), e.getFoodQuantity())
         ).collect(Collectors.toList());

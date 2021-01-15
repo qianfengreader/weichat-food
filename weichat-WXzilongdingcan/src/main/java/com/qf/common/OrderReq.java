@@ -5,6 +5,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 @Data
 public class OrderReq {
+    //@NotEmpty  验证注解的元素值不为null且（字符串长度不为0、集合大小不为0）
     @NotEmpty(message = "姓名必填")
     private String name;//买家姓名
     @NotEmpty(message = "手机号必填")

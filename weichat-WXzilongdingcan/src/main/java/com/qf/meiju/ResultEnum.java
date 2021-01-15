@@ -51,6 +51,7 @@ public enum ResultEnum {
 
     private String message;
 
+    //枚举对应的值    变量名(code   ,   message)
     ResultEnum(Integer code, String message) {
         this.code = code;
         this.message = message;
