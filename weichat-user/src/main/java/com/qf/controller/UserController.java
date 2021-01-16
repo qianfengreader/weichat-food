@@ -68,9 +68,6 @@ public class UserController {
                 token = cookie.getValue();
                 redisUtils.del(token);
 
-                /*cookie.setMaxAge(1);
-                cookie.setPath(request.getContextPath());*/
-
                 baseResp.setCode(200);
                 baseResp.setMessage("已退出当前登录");
             }

@@ -32,7 +32,7 @@ public class UploadUtils {
     private String url;
     public BaseResp upload(MultipartFile multipartFile){
         //构造一个带指定 Region 对象的配置类
-        Configuration cfg = new Configuration(Region.region2());
+        Configuration cfg = new Configuration(Region.region1());
         //...其他参数参考类注释
         UploadManager uploadManager = new UploadManager(cfg);
         //...生成上传凭证，然后准备上传

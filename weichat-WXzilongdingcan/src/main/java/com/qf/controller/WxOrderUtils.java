@@ -10,7 +10,6 @@ import com.qf.pojo.WxOrderDetail;
 import com.qf.pojo.WxOrderRoot;
 import com.qf.pojo.response.WxCardResponse;
 import com.qf.pojo.response.WxOrderResponse;
-import com.qf.utils.EnumUtil;
 import com.qf.websocket.WebSocketServer;
 import com.qf.yichang.DianCanException;
 import lombok.extern.slf4j.Slf4j;
@@ -24,7 +23,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;

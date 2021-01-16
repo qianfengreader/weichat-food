@@ -111,21 +111,21 @@ public class WebSocketServer {
     /**
      * 群发自定义消息
      */
-//    public static void sendInfo(String message, String sid) throws IOException {
-//        log.info("推送消息到窗口" + sid + "，推送内容:" + message);
-//        for (WebSocketServer item : webSocketSet) {
-//            try {
-//                //这里可以设定只推送给这个sid的，为null则全部推送
-//                if (sid == null) {
-//                    item.sendMessage(message, sid);
-//                } else if (item.sid.equals(sid)) {
-//                    item.sendMessage(message, sid);
-//                }
-//            } catch (IOException e) {
-//                continue;
-//            }
-//        }
-//    }
+    public static void sendInfo(String message, String sid) throws IOException {
+        log.info("推送消息到窗口" + sid + "，推送内容:" + message);
+        for (WebSocketServer item : webSocketSet) {
+            try {
+                //这里可以设定只推送给这个sid的，为null则全部推送
+                if (sid == null) {
+                    item.sendMessage(message, sid);
+                } else if (item.sid.equals(sid)) {
+                    item.sendMessage(message, sid);
+                }
+            } catch (IOException e) {
+                continue;
+            }
+        }
+    }
     public static synchronized int getOnlineCount() {
         return onlineCount;
     }
